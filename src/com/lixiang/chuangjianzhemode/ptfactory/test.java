@@ -5,6 +5,11 @@ package com.lixiang.chuangjianzhemode.ptfactory;
  */
 public class test {
 
+    /**
+     * 简单工厂模式
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         SendFactory sendFactory = new SendFactory();
         Sender mail = sendFactory.produce("mail");
