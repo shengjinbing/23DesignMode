@@ -2,6 +2,7 @@ package com.lixiang.jiegoumode.Decorator;
 
 /**
  * Created by Administrator on 2017/8/11 0011.
+ * 变形金刚
  */
 public class DecoratorTest {
     /*
@@ -13,9 +14,11 @@ public class DecoratorTest {
 
    缺点：产生过多相似的对象，不易排错！*/
     public static void main(String[] args) {
-        Sourceable source = new Source();
-        Sourceable obj = new Decorator(source);
-        obj.method();
+        Transform car = new Car();
+        car.move();
+        Robot   robot = new Robot(car);
+        robot.move();
+        robot.say();
     }
 }
 
