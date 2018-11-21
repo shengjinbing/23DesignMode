@@ -5,15 +5,15 @@ package com.lixiang.jiegoumode.Composite;
  */
 public class CompositeMain {
     public static void main(String[] args) {
-        Plate plate = new Plate();
+        MyElement plate = new Plate();
         plate.add(new Apple());
         plate.add(new Banana());
 
-        Plate plate1 = new Plate();
+        MyElement plate1 = new Plate();
         plate1.add(new Banana());
         plate1.add(new Pear());
 
-        Plate plate2 = new Plate();
+        MyElement plate2 = new Plate();
         plate2.add(new Apple());
         plate2.add(plate);
         plate2.add(plate1);
