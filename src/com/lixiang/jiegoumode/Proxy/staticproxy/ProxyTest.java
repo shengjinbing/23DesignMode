@@ -1,4 +1,7 @@
-package com.lixiang.jiegoumode.Proxy;
+package com.lixiang.jiegoumode.Proxy.staticproxy;
+
+import com.lixiang.jiegoumode.Proxy.staticproxy.AbstractPermission;
+import com.lixiang.jiegoumode.Proxy.staticproxy.PermissionProxy;
 
 /**
  * Created by Administrator on 2017/8/11 0011.
@@ -13,8 +16,9 @@ public class ProxyTest {
 
    缺点：产生过多相似的对象，不易排错！*/
     public static void main(String[] args) {
-        Sourceable obj = new Proxy();
-        obj.method();
+        AbstractPermission permissionProxy = new PermissionProxy();
+        permissionProxy.setLevel(1);
+        permissionProxy.modifyUserInfo();
     }
 }
 
