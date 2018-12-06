@@ -1,5 +1,8 @@
 package com.lixiang.behaviormode.template;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+
 /**
  * Created by Administrator on 2017/8/11 0011.
  */
@@ -12,5 +15,43 @@ public class StrategyTest {
         AbstractCalculator cal = new Plus();
         int result = cal.calculate(exp, "\\+");
         System.out.println(result);
+
+        System.out.println(formatDecimalDigits("0", 2));
+        System.out.println(formatDecimal(null, 2));
+    }
+
+    public static String formatDecimal (String value,int num){
+        final DecimalFormat formater = new DecimalFormat();
+        formater.setMaximumFractionDigits(num);
+        formater.setGroupingSize(0);
+        formater.setRoundingMode(RoundingMode.FLOOR);
+        String result = formater.format(Double.parseDouble(value));
+        String format = String.format("%.2f",  Double.valueOf(result));
+        return format;
+    }
+    public static String formatDecimalDigits(String value, int num) {
+        Double aDouble = 0.0;
+        try {
+            aDouble = Double.parseDouble(value);
+            if (aDouble == 0) {
+                return "0.00";
+            }
+        } catch (Exception e) {
+            return value;
+        }
+
+        if (num == 8) {
+            int i = value.indexOf(".");
+            if (i == -1) {
+                return value;
+            }
+            if (i > 0 && i < value.length() && value.substring(i).length() > 9) {
+                return String.format("%." + num + "f", aDouble);
+            } else {
+                return value;
+            }
+        } else {
+            return String.format("%." + num + "f", aDouble);
+        }
     }
 }
