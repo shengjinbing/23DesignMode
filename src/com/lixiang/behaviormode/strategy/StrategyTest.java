@@ -13,5 +13,15 @@ public class StrategyTest {
         ICalculator cal = new Plus();
         int result = cal.calculate(exp);
         System.out.println(result);
+        System.out.println(JumpFloorII(5));
+
+    }
+
+    public static int JumpFloorII(int target) {
+        if(target == 0)return 0;
+        if(target == 1)return 1;
+        if(target == 2)return 2;
+        int sum = JumpFloorII(target-1)+JumpFloorII(target-2);
+        return sum + target -2;
     }
 }
