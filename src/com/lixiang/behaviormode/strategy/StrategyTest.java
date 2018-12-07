@@ -9,19 +9,18 @@ public class StrategyTest {
      * @param args
      */
     public static void main(String[] args) {
-        String exp = "2+8";
-        ICalculator cal = new Plus();
-        int result = cal.calculate(exp);
-        System.out.println(result);
-        System.out.println(JumpFloorII(5));
-
+        int[] arr = new int[]{1,4,0,2,9,8,3,7,6,5};
+        ArrayHandler arrayHandler = new ArrayHandler();
+        //arrayHandler.setSortObj(new BubbleSort());
+        //arrayHandler.setSortObj(new SelectionSort());
+        arrayHandler.setSortObj(new InsertionSort());
+        arrayHandler.sort(arr);
+        print(arr);
     }
 
-    public static int JumpFloorII(int target) {
-        if(target == 0)return 0;
-        if(target == 1)return 1;
-        if(target == 2)return 2;
-        int sum = JumpFloorII(target-1)+JumpFloorII(target-2);
-        return sum + target -2;
+    public static void print(int[] arr){
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]+",");
+        }
     }
 }
