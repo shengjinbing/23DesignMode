@@ -2,7 +2,6 @@ package com.lixiang.jiegoumode.Proxy.dynamicproxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
-import java.util.function.Predicate;
 
 public class DynamicProxy implements InvocationHandler {
     private Object obj;

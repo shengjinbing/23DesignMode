@@ -1,8 +1,5 @@
 package com.lixiang.behaviormode.template;
 
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
-
 /**
  * Created by Administrator on 2017/8/11 0011.
  */

@@ -1,7 +1,5 @@
 package com.lixiang.behaviormode.State;
 
-import javax.naming.Name;
-
 /**
  * 环境类（论坛账号类）
  */

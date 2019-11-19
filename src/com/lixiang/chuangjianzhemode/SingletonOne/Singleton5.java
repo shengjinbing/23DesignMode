@@ -1,7 +1,5 @@
 package com.lixiang.chuangjianzhemode.SingletonOne;
 
-import jdk.nashorn.internal.ir.IfNode;
-
 public class Singleton5 {
     //双重校验证
     private Singleton5(){
