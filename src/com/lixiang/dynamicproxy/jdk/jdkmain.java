@@ -8,6 +8,7 @@ import java.lang.reflect.Proxy;
 public class jdkmain {
     public static void main(String[] args) {
         UserService userService = new UserServiceImpl();
+
         MyInvocationHandler myInvocationHandler = new MyInvocationHandler(userService);
         /**
          * loader:　　一个Cla¬ssLoader对象，定义了由哪个ClassLoader对象来对生成的代理对象进行加载
@@ -22,7 +23,17 @@ public class jdkmain {
                 userService.getClass().getClassLoader(),
                 userService.getClass().getInterfaces(),
                 myInvocationHandler);
+
         System.out.println(userServiceProxy.getName(1));
         //System.out.println(userServiceProxy.getAge(1));
+
+
+        UserService proxyInstance = (UserService) Proxy.newProxyInstance(
+                UserService.class.getClassLoader(),
+                UserService.class.getInterfaces(),
+                new TestInvocationHandler(UserService.class));
+        System.out.println(proxyInstance.getAge(1));
     }
+
+
 }
