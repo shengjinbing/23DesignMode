@@ -1,5 +1,7 @@
 package com.lixiang.dynamicproxy.jdk;
 
+import net.sf.cglib.proxy.Enhancer;
+
 import java.lang.reflect.Proxy;
 
 /**
@@ -28,11 +30,17 @@ public class jdkmain {
         //System.out.println(userServiceProxy.getAge(1));
 
 
-        UserService proxyInstance = (UserService) Proxy.newProxyInstance(
-                UserService.class.getClassLoader(),
-                UserService.class.getInterfaces(),
-                new TestInvocationHandler(UserService.class));
-        System.out.println(proxyInstance.getAge(1));
+        //基于cglib的动态代理，不需要让类实现
+        // 通过CGLIB动态代理获取代理对象的过程
+        Enhancer enhancer = new Enhancer();
+        // 设置enhancer对象的父类
+        enhancer.setSuperclass(UserServiceCglib.class);
+        // 设置enhancer的回调对象
+        enhancer.setCallback(new MyMethodInterceptor());
+        // 创建代理对象
+        UserServiceCglib proxy= (UserServiceCglib)enhancer.create();
+        // 通过代理对象调用目标方法
+        System.out.println(proxy.getAge(30));
     }
 
 
