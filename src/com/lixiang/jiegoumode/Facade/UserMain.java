@@ -2,8 +2,9 @@ package com.lixiang.jiegoumode.Facade;
 
 /**
  * Created by Administrator on 2017/8/11 0011.
+ * 外观（Facade）模式：为多个复杂的子系统提供一个一致的接口，使这些子系统更加容易被访问。
  */
-public class User {
+public class UserMain {
     /*外观模式是为了解决类与类之家的依赖关系的，像spring一样，
     可以将类和类之间的关系配置到配置文件中，而外观模式就是将他们的关系放在一个Facade类中，
     降低了类类之间的耦合度，该模式中没有涉及到接口*/

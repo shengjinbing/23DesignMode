@@ -4,7 +4,7 @@ package com.lixiang.chuangjianzhemode.ptfactory;
  * Created by Administrator on 2017/8/10 0010.
  */
 public class SendFactory {
-    public Sender produce(String type) {
+    public static Sender produce(String type) {
         if ("mail".equals(type)) {
             return new MailSender();
         } else if ("sms".equals(type)) {

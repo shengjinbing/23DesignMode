@@ -3,6 +3,7 @@ package com.lixiang.jiegoumode.Decorator;
 /**
  * Created by Administrator on 2017/8/11 0011.
  * 变形金刚
+ * 装饰（Decorator）模式：动态的给对象增加一些职责，即增加其额外的功能
  */
 public class DecoratorTest {
     /*

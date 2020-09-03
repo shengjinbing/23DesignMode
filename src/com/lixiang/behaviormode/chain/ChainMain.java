@@ -1,6 +1,8 @@
 package com.lixiang.behaviormode.chain;
 
 /**
+ *
+ * 责任链模式 -- OkHttp拦截器
  * 假条审批
  */
 public class ChainMain {

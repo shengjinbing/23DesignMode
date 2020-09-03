@@ -2,6 +2,7 @@ package com.lixiang.jiegoumode.Composite;
 
 /**
  * Created by Administrator on 2017/8/11 0011.
+ * 组合（Composite）模式：将对象组合成树状层次结构，使用户对单个对象和组合对象具有一致的访问性。
  */
 public class CompositeMain {
     public static void main(String[] args) {

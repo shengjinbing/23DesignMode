@@ -6,7 +6,9 @@ package com.lixiang.chuangjianzhemode.mulfactory;
 public class test {
 
     /**
-     *方法工厂模式
+     *工厂方法模式
+     *
+     * 解决简单工厂不符合开闭原则的问题
      *
      * @param args
      */
